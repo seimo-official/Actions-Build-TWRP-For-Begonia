@@ -70,10 +70,8 @@ jobs:
           cd ${{env.WorkSpace}}
           git clone ${{ env.DT_url }} --depth=1 --single-branch ${{ env.DT_path }}
           cd ${{ env.DT_path }}
-          sed -i 's/TW_INCLUDE_CRYPTO := false/TW_INCLUDE_CRYPTO := true/g' BoardConfig.mk
-          sed -i 's/TW_INCLUDE_CRYPTO_FBE := false/TW_INCLUDE_CRYPTO_FBE := true/g' BoardConfig.mk
           sed -i 's/vendor\/omni/vendor\/twrp/g' omni_begonia.mk
-          rm -rf recovery/root/*
+          # rm -rf recovery/root/*
 
       - name: Show tree
         run: tree -C -d -L 6
@@ -137,7 +135,7 @@ jobs:
           tag_name: ${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}
           body: |
             ${{env.Rec_name}}-${{env.Rec_ver}} for ${{ env.device }} build at ${{ steps.info.outputs.date }}
-            Download link :https://download.fastgit.org/RC1844/Actions-Build-TWRP-For-Begonia/releases/download/${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}/${{steps.info.outputs.OutFolder}}/${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip
+            Download link :https://download.fastgit.org/RC1844/Actions-Build-TWRP-For-Begonia/releases/download/${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}/${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
