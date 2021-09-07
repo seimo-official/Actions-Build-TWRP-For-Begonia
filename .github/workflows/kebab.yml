@@ -63,7 +63,7 @@ jobs:
       - name: Sync device tree
         run: |
           cd ${{env.WorkSpace}}
-          mkdir ${{env.device_path}}
+          mkdir -p ${{env.device_path}}
           cd ${{env.device_path}}
           git clone https://github.com/seimo-official/OFRP_oneplis_kebab_device.git kebab
         # rm -r recovery/root/system/lib64
