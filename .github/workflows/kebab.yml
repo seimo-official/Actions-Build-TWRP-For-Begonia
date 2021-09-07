@@ -52,6 +52,7 @@ jobs:
 
       - name: Sync recovery source
         run: |
+          mkdir ${{env.WorkSpace}}
           cd ${{env.WorkSpace}}
           git clone https://gitlab.com/OrangeFox/sync.git 
           cd sync
