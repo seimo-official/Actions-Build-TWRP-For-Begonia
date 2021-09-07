@@ -14,6 +14,7 @@ env:
   device: kebab
   DT_url: https://github.com/seimo-official/OFRP_oneplis_kebab_device.git
   DT_path: device/oneplus/kebab
+  device_path: device/onelpus
   target: recoveryimage
   WorkSpace: WorkSpace
   TZ: Asia/Shanghai
@@ -62,7 +63,8 @@ jobs:
       - name: Sync device tree
         run: |
           cd ${{env.WorkSpace}}
-          cd ${{env.DT_path}}
+          mkdir ${{env.device_path}}
+          cd ${{env.device_path}}
           git clone https://github.com/seimo-official/OFRP_oneplis_kebab_device.git kebab
         # rm -r recovery/root/system/lib64
 
