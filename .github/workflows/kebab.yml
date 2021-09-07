@@ -52,8 +52,7 @@ jobs:
 
       - name: Sync recovery source
         run: |
-          mkdir ${{env.WorkSpace}}
-          cd ${{env.WorkSpace}}
+          cd ${{GITHUB_WORKSPACE}}
           git clone https://gitlab.com/OrangeFox/sync.git 
           cd sync
           ./get_fox_10.sh ${{env.WorkSpace}}
@@ -62,7 +61,7 @@ jobs:
 
       - name: Sync device tree
         run: |
-          cd ${{env.WorkSpace}}
+          cd ${{GITHUB_WORKSPACE}}
           mkdir -p ${{env.device_path}}
           cd ${{env.device_path}}
           git clone https://github.com/seimo-official/OFRP_oneplis_kebab_device.git kebab
