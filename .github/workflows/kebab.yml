@@ -55,7 +55,7 @@ jobs:
           cd /home/runner/
           git clone https://gitlab.com/OrangeFox/sync.git 
           cd sync
-          ./get_fox_10.sh ${{env.WorkSpace}}
+          ./get_fox_10.sh /home/runner/
         # sed -i 's/USE_SSH="1"/USE_SSH="0"/g' get_fox_10.sh
         # ./get_fox_10.sh
 
@@ -82,7 +82,7 @@ jobs:
         with:
           path: |
             ~/.ccache
-            ${{env.WorkSpace}}/out
+            /home/runner/out
           key: ${{ runner.os }}-${{env.Rec_name}}-${{env.Rec_ver}}-${{ env.device }}
           restore-keys: |
             ${{ runner.os }}-${{env.Rec_name}}-${{env.Rec_ver}}-${{ env.device }}
