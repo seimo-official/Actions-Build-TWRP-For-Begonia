@@ -53,12 +53,15 @@ jobs:
         run: |
           mkdir ${{env.WorkSpace}}
           cd ${{env.WorkSpace}}
-          rsync rsync://sources.orangefox.download/sources/fox_10.0 . --progress -a
+          git clone https://gitlab.com/OrangeFox/sync.git 
+          cd sync
+          ./get_fox_10.sh ${{env.WorkSpace}}
         # sed -i 's/USE_SSH="1"/USE_SSH="0"/g' get_fox_10.sh
         # ./get_fox_10.sh
 
       - name: Sync device tree
         run: |
+          cd ${{env.WorkSpace}}
           cd ${{env.DT_path}}
           git clone https://github.com/seimo-official/OFRP_oneplis_kebab_device.git kebab
         # rm -r recovery/root/system/lib64
