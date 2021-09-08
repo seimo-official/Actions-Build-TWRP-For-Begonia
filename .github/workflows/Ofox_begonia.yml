@@ -10,7 +10,7 @@ on:
 env:
   Rec_name: Ofox
   Rec_ver: R11.0
-  Rec_url: https://github.com/RC1844/platform_manifest_twrp_omni.git -b fox-10.0
+  Rec_url: https://github.com/seimo-official/platform_manifest_twrp_omni.git -b fox-10.0
   device: kebab
   DT_url: https://github.com/seimo-official/OFRP_oneplis_kebab_device.git
   DT_path: device/oneplus/kebab
@@ -101,7 +101,7 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
           export LC_ALL="C"
-          export OF_MAINTAINER="RC1844"
+          export OF_MAINTAINER="Seimo"
           export FOX_VERSION="Unofficial"
           export OF_SCREEN_H=2160
           lunch omni_${{ env.device }}-eng
@@ -139,7 +139,7 @@ jobs:
           tag_name: ${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}
           body: |
             ${{env.Rec_name}}-${{env.Rec_ver}} for ${{ env.device }} build at ${{ steps.info.outputs.date }}
-            Download link :https://download.fastgit.org/RC1844/Actions-Build-TWRP-For-Begonia/releases/download/${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}/${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip
+            Download link :https://download.fastgit.org/seimo-official/Actions-Build-TWRP-For-Kebab/releases/download/${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}/${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
