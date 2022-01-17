@@ -10,7 +10,7 @@ on:
 env:
   Rec_name: Ofox
   Rec_ver: R11.0
-  Rec_url: https://github.com/seimo-official/platform_manifest_twrp_omni.git -b fox-10.0
+  Rec_url: https://gitlab.com/OrangeFox/sync.git -b master
   device: kebab
   DT_url: https://github.com/TeamWin/android_device_oneplus_kebab.git
   DT_path: device/oneplus/kebab
