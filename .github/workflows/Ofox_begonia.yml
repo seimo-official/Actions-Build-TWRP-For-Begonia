@@ -17,9 +17,9 @@ on:
 env:
   Rec_name: Ofox
   Rec_ver: "11.0"
-  Rec_url: https://gitlab.com/OrangeFox/sync.git -b master
+  Rec_url: git://gitlab.com/OrangeFox/sync.git -b master
   device: kebab
-  DT_url: https://github.com/TeamWin/android_device_oneplus_kebab.git -b -android-11
+  DT_url: git://github.com/TeamWin/android_device_oneplus_kebab.git -b -android-11
   DT_path: device/oneplus/kebab
   ProductFileHeader: twrp
   target: recoveryimage
@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: "Cleanup Environment"
@@ -67,7 +67,7 @@ jobs:
           echo "::endgroup::"
           echo "::group::sync Orangefox"
           cd ${{github.workspace}}/${{env.WorkSpace}}
-          repo sync -j1 --force-sync --fail-fast
+          repo sync -j6 --force-sync 
           echo "::endgroup::"
 
       - name: Sync device tree
