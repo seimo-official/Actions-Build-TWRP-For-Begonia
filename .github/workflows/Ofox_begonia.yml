@@ -67,7 +67,7 @@ jobs:
           echo "::endgroup::"
           echo "::group::sync Orangefox"
           cd ${{github.workspace}}/${{env.WorkSpace}}
-          repo sync -j1 --force-sync
+          repo sync -j1 --force-sync --fail-fast
           echo "::endgroup::"
 
       - name: Sync device tree
