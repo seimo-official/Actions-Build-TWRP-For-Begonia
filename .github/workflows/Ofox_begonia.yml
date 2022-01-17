@@ -6,7 +6,14 @@ on:
         description: "是否禁用加密模块，true or false"
         required: false
         default: "false"
-
+      Enable_cache:
+        description: "是否启用cache，true or false"
+        required: true
+        default: "true"
+      Delete_oldReleases:
+        description: "是否删除旧的发布，true or false"
+        required: false
+        default: "false"
 env:
   Rec_name: Ofox
   Rec_ver: R11.0
