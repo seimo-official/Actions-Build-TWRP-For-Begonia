@@ -1,4 +1,4 @@
-name: PBRP11 Builder
+name: PBRP11 Builder for kebab
 
 on:
   workflow_dispatch:
